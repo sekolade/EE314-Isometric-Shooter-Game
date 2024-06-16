@@ -68,7 +68,7 @@
 	wire [7:0] color_main;
 	wire [7:0] color_gameover;
 	wire [7:0] color_enemy;
-	reg [7:0] score; // daha yapılmadı ama scoreboard için
+	reg [7:0] score; 
 	//wire [15:0] alien1_wire; 
 	//wire [15:0] alien2_wire; 
 	//wire [15:0] alien3_wire; 
