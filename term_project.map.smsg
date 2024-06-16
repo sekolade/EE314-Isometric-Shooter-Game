@@ -1,0 +1,3 @@
+Warning (10268): Verilog HDL information at spaceship_body.v(71): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at dynamics_top.v(202): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at main.v(94): always construct contains both blocking and non-blocking assignments

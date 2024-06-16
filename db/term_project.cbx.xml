@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="term_project">
+		<CBX_INST_ENTRY INSTANCE_NAME="|term_project|main:comb_3|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_4am.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|term_project|main:comb_3|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_72m.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|term_project|main:comb_3|scoreboard:u4|lpm_divide:Div0" CBX_FILE_NAME="lpm_divide_5am.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|term_project|main:comb_3|scoreboard:u4|lpm_divide:Mod0" CBX_FILE_NAME="lpm_divide_82m.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

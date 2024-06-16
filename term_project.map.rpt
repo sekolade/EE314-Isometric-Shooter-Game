@@ -1,0 +1,1076 @@
+Analysis & Synthesis report for term_project
+Mon Jun 17 01:13:48 2024
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. State Machine - |term_project|main:comb_3|vga_driver:u1|v_state
+ 10. State Machine - |term_project|main:comb_3|vga_driver:u1|h_state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: main:comb_3|vga_driver:u1
+ 17. Parameter Settings for Inferred Entity Instance: main:comb_3|lpm_divide:Mod0
+ 18. Parameter Settings for Inferred Entity Instance: main:comb_3|lpm_divide:Div0
+ 19. Parameter Settings for Inferred Entity Instance: main:comb_3|scoreboard:u4|lpm_divide:Mod0
+ 20. Parameter Settings for Inferred Entity Instance: main:comb_3|scoreboard:u4|lpm_divide:Div0
+ 21. Port Connectivity Checks: "main:comb_3|dynamics_top:u7|ClockDivider:clock_instantiation"
+ 22. Port Connectivity Checks: "main:comb_3|scoreboard:u4"
+ 23. Port Connectivity Checks: "main:comb_3"
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++---------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Jun 17 01:13:47 2024      ;
+; Quartus II 64-Bit Version       ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                   ; term_project                               ;
+; Top-level Entity Name           ; term_project                               ;
+; Family                          ; Cyclone V                                  ;
+; Logic utilization (in ALMs)     ; N/A                                        ;
+; Total registers                 ; 398                                        ;
+; Total pins                      ; 99                                         ;
+; Total virtual pins              ; 0                                          ;
+; Total block memory bits         ; 0                                          ;
+; Total DSP Blocks                ; 24                                         ;
+; Total HSSI RX PCSs              ; 0                                          ;
+; Total HSSI PMA RX Deserializers ; 0                                          ;
+; Total HSSI TX PCSs              ; 0                                          ;
+; Total HSSI TX Channels          ; 0                                          ;
+; Total PLLs                      ; 0                                          ;
+; Total DLLs                      ; 0                                          ;
++---------------------------------+--------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; term_project       ; term_project       ;
+; Family name                                                                     ; Cyclone V          ; Cyclone IV GX      ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                       ; Off                ; Off                ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; PowerPlay Power Optimization                                                    ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Synthesis Seed                                                                  ; 1                  ; 1                  ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                 ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                             ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+; yildiz_kumlu.v                   ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/yildiz_kumlu.v                   ;         ;
+; vga_driver.v                     ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/vga_driver.v                     ;         ;
+; spaceship_body.v                 ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/spaceship_body.v                 ;         ;
+; shoot_mechanism.v                ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/shoot_mechanism.v                ;         ;
+; seven_segment_display.v          ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/seven_segment_display.v          ;         ;
+; scoreboard.v                     ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/scoreboard.v                     ;         ;
+; location.v                       ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/location.v                       ;         ;
+; game_over_display.v              ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/game_over_display.v              ;         ;
+; enemy_spawn_signal_generator.v   ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/enemy_spawn_signal_generator.v   ;         ;
+; enemy_spawn_location_generator.v ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/enemy_spawn_location_generator.v ;         ;
+; enemy_movement.v                 ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/enemy_movement.v                 ;         ;
+; dynamics_top.v                   ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/dynamics_top.v                   ;         ;
+; color_hierarchy.v                ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/color_hierarchy.v                ;         ;
+; ClockDivider.v                   ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/ClockDivider.v                   ;         ;
+; angle.v                          ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/angle.v                          ;         ;
+; term_project.v                   ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/term_project.v                   ;         ;
+; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/main.v                           ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/lpm_divide.tdf                            ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/abs_divider.inc                           ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/sign_div_unsign.inc                       ;         ;
+; aglobal131.inc                   ; yes             ; Megafunction                 ; c:/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc                            ;         ;
+; db/lpm_divide_72m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/lpm_divide_72m.tdf            ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/sign_div_unsign_akh.tdf       ;         ;
+; db/alt_u_div_qse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/alt_u_div_qse.tdf             ;         ;
+; db/lpm_divide_4am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/lpm_divide_4am.tdf            ;         ;
+; db/lpm_divide_82m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/lpm_divide_82m.tdf            ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/sign_div_unsign_bkh.tdf       ;         ;
+; db/alt_u_div_sse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/alt_u_div_sse.tdf             ;         ;
+; db/lpm_divide_5am.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/db/lpm_divide_5am.tdf            ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 1876                  ;
+;                                             ;                       ;
+; Combinational ALUT usage for logic          ; 3141                  ;
+;     -- 7 input functions                    ; 65                    ;
+;     -- 6 input functions                    ; 538                   ;
+;     -- 5 input functions                    ; 593                   ;
+;     -- 4 input functions                    ; 454                   ;
+;     -- <=3 input functions                  ; 1491                  ;
+;                                             ;                       ;
+; Dedicated logic registers                   ; 398                   ;
+;                                             ;                       ;
+; I/O pins                                    ; 99                    ;
+; Total DSP Blocks                            ; 24                    ;
+; Maximum fan-out node                        ; main:comb_3|clk_25mhz ;
+; Maximum fan-out                             ; 383                   ;
+; Total fan-out                               ; 13090                 ;
+; Average fan-out                             ; 3.48                  ;
++---------------------------------------------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                         ;
++----------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                               ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                     ; Library Name ;
++----------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |term_project                                            ; 3141 (0)          ; 398 (0)      ; 0                 ; 24         ; 99   ; 0            ; |term_project                                                                                                                           ; work         ;
+;    |main:comb_3|                                         ; 3141 (5)          ; 398 (9)      ; 0                 ; 24         ; 0    ; 0            ; |term_project|main:comb_3                                                                                                               ; work         ;
+;       |angle:u3|                                         ; 12 (12)           ; 8 (8)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|angle:u3                                                                                                      ; work         ;
+;       |color_hierarchy:u5|                               ; 3 (3)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|color_hierarchy:u5                                                                                            ; work         ;
+;       |dynamics_top:u7|                                  ; 588 (383)         ; 276 (201)    ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|dynamics_top:u7                                                                                               ; work         ;
+;          |enemy_spawn_location_generator:erg_inst|       ; 10 (10)           ; 17 (17)      ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst                                                       ; work         ;
+;          |enemy_spawn_signal_generator:signal_gen_inst|  ; 40 (40)           ; 33 (33)      ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|dynamics_top:u7|enemy_spawn_signal_generator:signal_gen_inst                                                  ; work         ;
+;          |shoot_mechanism:shoot_mechanism_instantiation| ; 155 (155)         ; 25 (25)      ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|dynamics_top:u7|shoot_mechanism:shoot_mechanism_instantiation                                                 ; work         ;
+;       |enemy_movement:u6|                                ; 1972 (586)        ; 3 (3)        ; 0                 ; 16         ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6                                                                                             ; work         ;
+;          |location:loc1|                                 ; 172 (172)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc1                                                                               ; work         ;
+;          |location:loc2|                                 ; 172 (172)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc2                                                                               ; work         ;
+;          |location:loc3|                                 ; 174 (174)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc3                                                                               ; work         ;
+;          |location:loc4|                                 ; 173 (173)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc4                                                                               ; work         ;
+;          |location:loc5|                                 ; 173 (173)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc5                                                                               ; work         ;
+;          |location:loc6|                                 ; 174 (174)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc6                                                                               ; work         ;
+;          |location:loc7|                                 ; 174 (174)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc7                                                                               ; work         ;
+;          |location:loc8|                                 ; 174 (174)         ; 0 (0)        ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|enemy_movement:u6|location:loc8                                                                               ; work         ;
+;       |game_over_display:u9|                             ; 84 (84)           ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|game_over_display:u9                                                                                          ; work         ;
+;       |lpm_divide:Div0|                                  ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Div0                                                                                               ; work         ;
+;          |lpm_divide_4am:auto_generated|                 ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Div0|lpm_divide_4am:auto_generated                                                                 ; work         ;
+;             |sign_div_unsign_akh:divider|                ; 38 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider                                     ; work         ;
+;                |alt_u_div_qse:divider|                   ; 38 (38)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Div0|lpm_divide_4am:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider               ; work         ;
+;       |lpm_divide:Mod0|                                  ; 42 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Mod0                                                                                               ; work         ;
+;          |lpm_divide_72m:auto_generated|                 ; 42 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Mod0|lpm_divide_72m:auto_generated                                                                 ; work         ;
+;             |sign_div_unsign_akh:divider|                ; 42 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider                                     ; work         ;
+;                |alt_u_div_qse:divider|                   ; 42 (42)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|lpm_divide:Mod0|lpm_divide_72m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_qse:divider               ; work         ;
+;       |scoreboard:u4|                                    ; 159 (65)          ; 1 (1)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4                                                                                                 ; work         ;
+;          |lpm_divide:Div0|                               ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Div0                                                                                 ; work         ;
+;             |lpm_divide_5am:auto_generated|              ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Div0|lpm_divide_5am:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bkh:divider|             ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Div0|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                   |alt_u_div_sse:divider|                ; 47 (47)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Div0|lpm_divide_5am:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
+;          |lpm_divide:Mod0|                               ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Mod0                                                                                 ; work         ;
+;             |lpm_divide_82m:auto_generated|              ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Mod0|lpm_divide_82m:auto_generated                                                   ; work         ;
+;                |sign_div_unsign_bkh:divider|             ; 47 (0)            ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Mod0|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider                       ; work         ;
+;                   |alt_u_div_sse:divider|                ; 47 (47)           ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|scoreboard:u4|lpm_divide:Mod0|lpm_divide_82m:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_sse:divider ; work         ;
+;       |seven_segment_display:u10|                        ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|seven_segment_display:u10                                                                                     ; work         ;
+;       |seven_segment_display:u11|                        ; 7 (7)             ; 0 (0)        ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|seven_segment_display:u11                                                                                     ; work         ;
+;       |spaceship_body:u2|                                ; 136 (136)         ; 40 (40)      ; 0                 ; 2          ; 0    ; 0            ; |term_project|main:comb_3|spaceship_body:u2                                                                                             ; work         ;
+;       |vga_driver:u1|                                    ; 82 (82)           ; 39 (39)      ; 0                 ; 0          ; 0    ; 0            ; |term_project|main:comb_3|vga_driver:u1                                                                                                 ; work         ;
+;       |yildiz_kumlu:u8|                                  ; 6 (6)             ; 21 (21)      ; 0                 ; 6          ; 0    ; 0            ; |term_project|main:comb_3|yildiz_kumlu:u8                                                                                               ; work         ;
++----------------------------------------------------------+-------------------+--------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary                                         ;
++------------------------------+-------------+---------------------+-------------------+
+; Statistic                    ; Number Used ; Available per Block ; Maximum Available ;
++------------------------------+-------------+---------------------+-------------------+
+; Independent 9x9              ; 16          ; 3.00                ; --                ;
+; Sum of two 18x18             ; 2           ; 1.00                ; --                ;
+; Independent 27x27            ; 6           ; 1.00                ; --                ;
+; DSP Block                    ; 24          ; --                  ; --                ;
+; DSP 18-bit Element           ; 4           ; 2.00                ; --                ;
+; DSP 27-bit Element           ; 22          ; 1.00                ; --                ;
+; Signed Multiplier            ; 4           ; --                  ; --                ;
+; Unsigned Multiplier          ; 22          ; --                  ; --                ;
+; Dedicated Output Adder Chain ; 1           ; --                  ; --                ;
++------------------------------+-------------+---------------------+-------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |term_project|main:comb_3|vga_driver:u1|v_state                                                        ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+; Name                   ; v_state.V_BACK_STATE ; v_state.V_PULSE_STATE ; v_state.V_FRONT_STATE ; v_state.V_ACTIVE_STATE ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+; v_state.V_ACTIVE_STATE ; 0                    ; 0                     ; 0                     ; 0                      ;
+; v_state.V_FRONT_STATE  ; 0                    ; 0                     ; 1                     ; 1                      ;
+; v_state.V_PULSE_STATE  ; 0                    ; 1                     ; 0                     ; 1                      ;
+; v_state.V_BACK_STATE   ; 1                    ; 0                     ; 0                     ; 1                      ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |term_project|main:comb_3|vga_driver:u1|h_state                                                        ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+; Name                   ; h_state.H_BACK_STATE ; h_state.H_PULSE_STATE ; h_state.H_FRONT_STATE ; h_state.H_ACTIVE_STATE ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+; h_state.H_ACTIVE_STATE ; 0                    ; 0                     ; 0                     ; 0                      ;
+; h_state.H_FRONT_STATE  ; 0                    ; 0                     ; 1                     ; 1                      ;
+; h_state.H_PULSE_STATE  ; 0                    ; 1                     ; 0                     ; 1                      ;
+; h_state.H_BACK_STATE   ; 1                    ; 0                     ; 0                     ; 1                      ;
++------------------------+----------------------+-----------------------+-----------------------+------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; main:comb_3|dynamics_top:u7|counter_limit[3]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[4]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[5]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[6]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[8]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[9]        ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[10]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[12]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[13]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[14]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[15]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[16]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[17]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[20]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[21]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[22]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[23]       ; SW[9]               ; yes                    ;
+; main:comb_3|dynamics_top:u7|counter_limit[24]       ; SW[9]               ; yes                    ;
+; Number of user-specified and inferred latches = 18  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                            ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+; Register name                                                               ; Reason for Removal                                                                              ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+; main:comb_3|yildiz_kumlu:u8|color[0..2,6]                                   ; Stuck at VCC due to stuck port data_in                                                          ;
+; main:comb_3|scoreboard:u4|vga_color[0,1,5..7]                               ; Stuck at GND due to stuck port data_in                                                          ;
+; main:comb_3|vga_driver:u1|red_reg[0]                                        ; Stuck at GND due to stuck port data_in                                                          ;
+; main:comb_3|vga_driver:u1|green_reg[0..4]                                   ; Stuck at GND due to stuck port data_in                                                          ;
+; main:comb_3|vga_driver:u1|blue_reg[0..5]                                    ; Stuck at GND due to stuck port data_in                                                          ;
+; main:comb_3|vga_driver:u1|red_reg[1..4]                                     ; Stuck at GND due to stuck port data_in                                                          ;
+; main:comb_3|game_over_display:u9|vga_color[1..7]                            ; Merged with main:comb_3|game_over_display:u9|vga_color[0]                                       ;
+; main:comb_3|yildiz_kumlu:u8|color[3..5]                                     ; Merged with main:comb_3|yildiz_kumlu:u8|color[7]                                                ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|type[1] ; Merged with main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[0] ;
+; main:comb_3|enemy_movement:u6|color[5,6]                                    ; Merged with main:comb_3|enemy_movement:u6|color[7]                                              ;
+; main:comb_3|enemy_movement:u6|color[2,3]                                    ; Merged with main:comb_3|enemy_movement:u6|color[4]                                              ;
+; main:comb_3|enemy_movement:u6|color[0]                                      ; Merged with main:comb_3|enemy_movement:u6|color[1]                                              ;
+; main:comb_3|scoreboard:u4|vga_color[2,3]                                    ; Merged with main:comb_3|scoreboard:u4|vga_color[4]                                              ;
+; main:comb_3|spaceship_body:u2|color[1..3]                                   ; Merged with main:comb_3|spaceship_body:u2|color[0]                                              ;
+; main:comb_3|spaceship_body:u2|color[6,7]                                    ; Merged with main:comb_3|spaceship_body:u2|color[5]                                              ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_1[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_1_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_1[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_1_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_1[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_1_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_2[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_2_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_2[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_2_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_2[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_2_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_3[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_3_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_3[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_3_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_3[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_3_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_4[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_4_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_4[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_4_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_4[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_4_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_5[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_5_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_5[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_5_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_5[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_5_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_6[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_6_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_6[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_6_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_6[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_6_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_7[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_7_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_7[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_7_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_7[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_7_can[0]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_8[2]                         ; Merged with main:comb_3|dynamics_top:u7|alien_8_can[2]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_8[1]                         ; Merged with main:comb_3|dynamics_top:u7|alien_8_can[1]                                          ;
+; main:comb_3|dynamics_top:u7|shift_reg_previous_8[0]                         ; Merged with main:comb_3|dynamics_top:u7|alien_8_can[0]                                          ;
+; main:comb_3|spaceship_body:u2|spaceship_color[1..3]                         ; Merged with main:comb_3|spaceship_body:u2|spaceship_color[0]                                    ;
+; main:comb_3|spaceship_body:u2|spaceship_color[6,7]                          ; Merged with main:comb_3|spaceship_body:u2|spaceship_color[5]                                    ;
+; main:comb_3|spaceship_body:u2|spaceship_color[4]                            ; Stuck at VCC due to stuck port data_in                                                          ;
+; main:comb_3|vga_driver:u1|v_state~5                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~6                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~7                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~8                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~9                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~10                                        ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~11                                        ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|v_state~12                                        ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~5                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~6                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~7                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~8                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~9                                         ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~10                                        ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~11                                        ; Lost fanout                                                                                     ;
+; main:comb_3|vga_driver:u1|h_state~12                                        ; Lost fanout                                                                                     ;
+; Total Number of Removed Registers = 94                                      ;                                                                                                 ;
++-----------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 398   ;
+; Number of registers using Synchronous Clear  ; 109   ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 238   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                   ;
++--------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                    ; Fan out ;
++--------------------------------------------------------------------------------------+---------+
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[0]  ; 20      ;
+; main:comb_3|spaceship_body:u2|spaceship_color[0]                                     ; 1       ;
+; main:comb_3|spaceship_body:u2|spaceship_color[5]                                     ; 1       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[12] ; 9       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[13] ; 9       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[14] ; 9       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[4]  ; 1       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[7]  ; 1       ;
+; main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst|internal_reg[11] ; 1       ;
+; Total number of inverted registers = 9                                               ;         ;
++--------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |term_project|main:comb_3|dynamics_top:u7|internal_counter[13]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |term_project|main:comb_3|spaceship_body:u2|color[0]            ;
+; 8:1                ; 24 bits   ; 120 LEs       ; 48 LEs               ; 72 LEs                 ; Yes        ; |term_project|main:comb_3|dynamics_top:u7|alien_2_type[0]       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |term_project|main:comb_3|vga_driver:u1|green_reg[7]            ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |term_project|main:comb_3|vga_driver:u1|red_reg[6]              ;
+; 9:1                ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |term_project|main:comb_3|vga_driver:u1|h_counter[3]            ;
+; 10:1               ; 7 bits    ; 42 LEs        ; 7 LEs                ; 35 LEs                 ; Yes        ; |term_project|main:comb_3|dynamics_top:u7|score[6]              ;
+; 13:1               ; 10 bits   ; 80 LEs        ; 0 LEs                ; 80 LEs                 ; Yes        ; |term_project|main:comb_3|vga_driver:u1|v_counter[0]            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |term_project|main:comb_3|spaceship_body:u2|spaceship_color[5]  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux8  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux7  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux8  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux7  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux7  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux8  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux8  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux7  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux7  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux6  ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux6  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux2  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux5  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux14 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux2  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux5  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux15 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux2  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux5  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux14 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux2  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux4  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux15 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux1  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux5  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux15 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux1  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux4  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux14 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux1  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux4  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux14 ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 14 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux1  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux4  ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux15 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_1_location      ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_1_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_2_location      ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 6 LEs                ; 15 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_2_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_3_location      ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_3_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_4_location      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|vga_driver:u1|blue_reg                ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_4_can           ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux7  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc1|Mux17 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux7  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc2|Mux18 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux8  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc3|Mux16 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux7  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc4|Mux16 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux6  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc5|Mux16 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux8  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc6|Mux16 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux6  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc7|Mux16 ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux8  ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 12 LEs               ; 6 LEs                  ; No         ; |term_project|main:comb_3|enemy_movement:u6|location:loc8|Mux18 ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_5_location      ;
+; 14:1               ; 3 bits    ; 27 LEs        ; 6 LEs                ; 21 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_5_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_6_location      ;
+; 15:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_6_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_7_location      ;
+; 16:1               ; 3 bits    ; 30 LEs        ; 6 LEs                ; 24 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_7_can           ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_8_location      ;
+; 17:1               ; 3 bits    ; 33 LEs        ; 6 LEs                ; 27 LEs                 ; No         ; |term_project|main:comb_3|dynamics_top:u7|alien_8_can           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: main:comb_3|vga_driver:u1 ;
++----------------+------------+------------------------------------------+
+; Parameter Name ; Value      ; Type                                     ;
++----------------+------------+------------------------------------------+
+; H_ACTIVE       ; 1001111111 ; Unsigned Binary                          ;
+; H_FRONT        ; 0000001111 ; Unsigned Binary                          ;
+; H_PULSE        ; 0001011111 ; Unsigned Binary                          ;
+; H_BACK         ; 0000101111 ; Unsigned Binary                          ;
+; V_ACTIVE       ; 0111011111 ; Unsigned Binary                          ;
+; V_FRONT        ; 0000001001 ; Unsigned Binary                          ;
+; V_PULSE        ; 0000000001 ; Unsigned Binary                          ;
+; V_BACK         ; 0000100000 ; Unsigned Binary                          ;
+; LOW            ; 0          ; Unsigned Binary                          ;
+; HIGH           ; 1          ; Unsigned Binary                          ;
+; H_ACTIVE_STATE ; 00000000   ; Unsigned Binary                          ;
+; H_FRONT_STATE  ; 00000001   ; Unsigned Binary                          ;
+; H_PULSE_STATE  ; 00000010   ; Unsigned Binary                          ;
+; H_BACK_STATE   ; 00000011   ; Unsigned Binary                          ;
+; V_ACTIVE_STATE ; 00000000   ; Unsigned Binary                          ;
+; V_FRONT_STATE  ; 00000001   ; Unsigned Binary                          ;
+; V_PULSE_STATE  ; 00000010   ; Unsigned Binary                          ;
+; V_BACK_STATE   ; 00000011   ; Unsigned Binary                          ;
++----------------+------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main:comb_3|lpm_divide:Mod0 ;
++------------------------+----------------+------------------------------------+
+; Parameter Name         ; Value          ; Type                               ;
++------------------------+----------------+------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                            ;
+; LPM_WIDTHD             ; 4              ; Untyped                            ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_PIPELINE           ; 0              ; Untyped                            ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                            ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                            ;
+; CBXI_PARAMETER         ; lpm_divide_72m ; Untyped                            ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                            ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                     ;
++------------------------+----------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main:comb_3|lpm_divide:Div0 ;
++------------------------+----------------+------------------------------------+
+; Parameter Name         ; Value          ; Type                               ;
++------------------------+----------------+------------------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                            ;
+; LPM_WIDTHD             ; 4              ; Untyped                            ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                            ;
+; LPM_PIPELINE           ; 0              ; Untyped                            ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                            ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                            ;
+; CBXI_PARAMETER         ; lpm_divide_4am ; Untyped                            ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                            ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                            ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                     ;
++------------------------+----------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main:comb_3|scoreboard:u4|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_82m ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: main:comb_3|scoreboard:u4|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                             ;
++------------------------+----------------+--------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                          ;
+; LPM_WIDTHD             ; 4              ; Untyped                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                          ;
+; CBXI_PARAMETER         ; lpm_divide_5am ; Untyped                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                   ;
++------------------------+----------------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "main:comb_3|dynamics_top:u7|ClockDivider:clock_instantiation"                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; game_clock ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "main:comb_3|scoreboard:u4"                                                                                                                      ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                        ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (7 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "number[7..7]" will be connected to GND. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "main:comb_3"                                                                                                     ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                  ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; alien1_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien2_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien3_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien4_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien5_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien6_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien7_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; alien8_wire  ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
+; sample_total ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:13     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Jun 17 01:13:31 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off term_project -c term_project
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file yildiz_kumlu.v
+    Info (12023): Found entity 1: yildiz_kumlu
+Info (12021): Found 1 design units, including 1 entities, in source file vga_driver.v
+    Info (12023): Found entity 1: vga_driver
+Info (12021): Found 1 design units, including 1 entities, in source file spaceship_body.v
+    Info (12023): Found entity 1: spaceship_body
+Info (12021): Found 1 design units, including 1 entities, in source file shoot_mechanism.v
+    Info (12023): Found entity 1: shoot_mechanism
+Info (12021): Found 1 design units, including 1 entities, in source file seven_segment_display.v
+    Info (12023): Found entity 1: seven_segment_display
+Info (12021): Found 1 design units, including 1 entities, in source file scoreboard.v
+    Info (12023): Found entity 1: scoreboard
+Info (12021): Found 1 design units, including 1 entities, in source file location.v
+    Info (12023): Found entity 1: location
+Info (12021): Found 1 design units, including 1 entities, in source file game_over_display.v
+    Info (12023): Found entity 1: game_over_display
+Info (12021): Found 1 design units, including 1 entities, in source file enemy_spawn_signal_generator.v
+    Info (12023): Found entity 1: enemy_spawn_signal_generator
+Warning (10463): Verilog HDL Declaration warning at enemy_spawn_location_generator.v(11): "type" is SystemVerilog-2005 keyword
+Info (12021): Found 1 design units, including 1 entities, in source file enemy_spawn_location_generator.v
+    Info (12023): Found entity 1: enemy_spawn_location_generator
+Warning (10463): Verilog HDL Declaration warning at enemy_movement.v(17): "type" is SystemVerilog-2005 keyword
+Info (12021): Found 1 design units, including 1 entities, in source file enemy_movement.v
+    Info (12023): Found entity 1: enemy_movement
+Warning (10463): Verilog HDL Declaration warning at enemy_effect.v(39): "type" is SystemVerilog-2005 keyword
+Info (12021): Found 1 design units, including 1 entities, in source file enemy_effect.v
+    Info (12023): Found entity 1: enemy_effect
+Info (12021): Found 1 design units, including 1 entities, in source file dynamics_top.v
+    Info (12023): Found entity 1: dynamics_top
+Info (12021): Found 1 design units, including 1 entities, in source file color_hierarchy.v
+    Info (12023): Found entity 1: color_hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file clockdivider.v
+    Info (12023): Found entity 1: ClockDivider
+Info (12021): Found 1 design units, including 1 entities, in source file angle.v
+    Info (12023): Found entity 1: angle
+Info (12021): Found 1 design units, including 1 entities, in source file term_project.v
+    Info (12023): Found entity 1: term_project
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main
+Warning (10236): Verilog HDL Implicit Net warning at dynamics_top.v(83): created implicit net for "rocket_angle"
+Warning (10236): Verilog HDL Implicit Net warning at dynamics_top.v(191): created implicit net for "spawn"
+Critical Warning (10846): Verilog HDL Instantiation warning at term_project.v(72): instance has no name
+Info (12127): Elaborating entity "term_project" for the top level hierarchy
+Warning (10034): Output port "HEX2" at term_project.v(17) has no driver
+Warning (10034): Output port "HEX3" at term_project.v(18) has no driver
+Warning (10034): Output port "HEX4" at term_project.v(19) has no driver
+Warning (10034): Output port "HEX5" at term_project.v(20) has no driver
+Warning (10034): Output port "LEDR[9..3]" at term_project.v(26) has no driver
+Info (12128): Elaborating entity "main" for hierarchy "main:comb_3"
+Warning (10036): Verilog HDL or VHDL warning at main.v(71): object "score" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at main.v(97): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at main.v(98): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "vga_driver" for hierarchy "main:comb_3|vga_driver:u1"
+Info (12128): Elaborating entity "spaceship_body" for hierarchy "main:comb_3|spaceship_body:u2"
+Warning (10036): Verilog HDL or VHDL warning at spaceship_body.v(15): object "shoot_detected" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(31): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(32): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(47): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(48): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(49): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(50): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(51): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(52): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(53): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(54): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(55): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(56): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(57): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(58): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(59): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(60): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(61): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(62): truncated value with size 32 to match size of target (11)
+Warning (10230): Verilog HDL assignment warning at spaceship_body.v(63): truncated value with size 32 to match size of target (11)
+Info (12128): Elaborating entity "angle" for hierarchy "main:comb_3|angle:u3"
+Warning (10230): Verilog HDL assignment warning at angle.v(10): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at angle.v(13): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "scoreboard" for hierarchy "main:comb_3|scoreboard:u4"
+Warning (10230): Verilog HDL assignment warning at scoreboard.v(137): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at scoreboard.v(138): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at scoreboard.v(145): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at scoreboard.v(148): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at scoreboard.v(151): truncated value with size 32 to match size of target (4)
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "font" into its bus
+Info (12128): Elaborating entity "color_hierarchy" for hierarchy "main:comb_3|color_hierarchy:u5"
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(13): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(18): variable "gameover" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(19): variable "color_scoreboard" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(20): variable "color_scoreboard" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(23): variable "color_gameover" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(27): variable "color_spaceship" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(28): variable "color_spaceship" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(30): variable "color_scoreboard" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(31): variable "color_scoreboard" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(33): variable "color_enemy" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(34): variable "color_enemy" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(36): variable "color_yildiz" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(37): variable "background_switch" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at color_hierarchy.v(38): variable "color_yildiz" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "enemy_movement" for hierarchy "main:comb_3|enemy_movement:u6"
+Info (12128): Elaborating entity "location" for hierarchy "main:comb_3|enemy_movement:u6|location:loc1"
+Warning (10036): Verilog HDL or VHDL warning at location.v(8): object "radius" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at location.v(8): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at location.v(11): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at location.v(14): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(15): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(18): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(19): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(22): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(23): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(26): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(27): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(30): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(31): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(34): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(35): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(38): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(39): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(42): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(43): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(46): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(47): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(50): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(51): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(54): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(55): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(58): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(59): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(62): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(63): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(66): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(67): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(70): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(71): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(74): truncated value with size 32 to match size of target (10)
+Warning (10230): Verilog HDL assignment warning at location.v(75): truncated value with size 32 to match size of target (10)
+Info (12128): Elaborating entity "dynamics_top" for hierarchy "main:comb_3|dynamics_top:u7"
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(52): truncated value with size 4 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(231): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(234): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(237): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(240): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(243): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(246): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(249): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(252): truncated value with size 32 to match size of target (5)
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(266): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(292): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(318): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(344): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(370): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(396): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(422): all case item expressions in this case statement are onehot
+Info (10264): Verilog HDL Case Statement information at dynamics_top.v(448): all case item expressions in this case statement are onehot
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(516): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(517): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(518): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(519): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(520): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(521): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(522): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(523): truncated value with size 32 to match size of target (3)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(539): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(544): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(549): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(554): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(559): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(564): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(569): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at dynamics_top.v(574): truncated value with size 32 to match size of target (7)
+Warning (10240): Verilog HDL Always Construct warning at dynamics_top.v(622): inferring latch(es) for variable "counter_limit", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "counter_limit[0]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[1]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[2]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[3]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[4]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[5]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[6]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[7]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[8]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[9]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[10]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[11]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[12]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[13]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[14]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[15]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[16]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[17]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[18]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[19]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[20]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[21]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[22]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[23]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[24]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[25]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[26]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[27]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[28]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[29]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[30]" at dynamics_top.v(622)
+Info (10041): Inferred latch for "counter_limit[31]" at dynamics_top.v(622)
+Info (12128): Elaborating entity "ClockDivider" for hierarchy "main:comb_3|dynamics_top:u7|ClockDivider:clock_instantiation"
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(12): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(13): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(14): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(15): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(16): truncated value with size 32 to match size of target (26)
+Warning (10230): Verilog HDL assignment warning at ClockDivider.v(22): truncated value with size 32 to match size of target (26)
+Info (12128): Elaborating entity "shoot_mechanism" for hierarchy "main:comb_3|dynamics_top:u7|shoot_mechanism:shoot_mechanism_instantiation"
+Info (12128): Elaborating entity "enemy_spawn_signal_generator" for hierarchy "main:comb_3|dynamics_top:u7|enemy_spawn_signal_generator:signal_gen_inst"
+Info (12128): Elaborating entity "enemy_spawn_location_generator" for hierarchy "main:comb_3|dynamics_top:u7|enemy_spawn_location_generator:erg_inst"
+Info (12128): Elaborating entity "yildiz_kumlu" for hierarchy "main:comb_3|yildiz_kumlu:u8"
+Info (12128): Elaborating entity "game_over_display" for hierarchy "main:comb_3|game_over_display:u9"
+Info (12128): Elaborating entity "seven_segment_display" for hierarchy "main:comb_3|seven_segment_display:u10"
+Info (278001): Inferred 4 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main:comb_3|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main:comb_3|Div0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main:comb_3|scoreboard:u4|Mod0"
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "main:comb_3|scoreboard:u4|Div0"
+Info (12130): Elaborated megafunction instantiation "main:comb_3|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "main:comb_3|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_72m.tdf
+    Info (12023): Found entity 1: lpm_divide_72m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_akh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_qse.tdf
+    Info (12023): Found entity 1: alt_u_div_qse
+Info (12130): Elaborated megafunction instantiation "main:comb_3|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "main:comb_3|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "7"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_4am.tdf
+    Info (12023): Found entity 1: lpm_divide_4am
+Info (12130): Elaborated megafunction instantiation "main:comb_3|scoreboard:u4|lpm_divide:Mod0"
+Info (12133): Instantiated megafunction "main:comb_3|scoreboard:u4|lpm_divide:Mod0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_82m.tdf
+    Info (12023): Found entity 1: lpm_divide_82m
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_sse.tdf
+    Info (12023): Found entity 1: alt_u_div_sse
+Info (12130): Elaborated megafunction instantiation "main:comb_3|scoreboard:u4|lpm_divide:Div0"
+Info (12133): Instantiated megafunction "main:comb_3|scoreboard:u4|lpm_divide:Div0" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_5am.tdf
+    Info (12023): Found entity 1: lpm_divide_5am
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[8]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[3]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[23]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[5]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[24]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[6]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[17]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[10]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[20]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[12]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[21]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[13]"
+    Info (13026): Duplicate LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[22]" merged with LATCH primitive "main:comb_3|dynamics_top:u7|counter_limit[14]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "HEX2[0]" is stuck at GND
+    Warning (13410): Pin "HEX2[1]" is stuck at GND
+    Warning (13410): Pin "HEX2[2]" is stuck at GND
+    Warning (13410): Pin "HEX2[3]" is stuck at GND
+    Warning (13410): Pin "HEX2[4]" is stuck at GND
+    Warning (13410): Pin "HEX2[5]" is stuck at GND
+    Warning (13410): Pin "HEX2[6]" is stuck at GND
+    Warning (13410): Pin "HEX3[0]" is stuck at GND
+    Warning (13410): Pin "HEX3[1]" is stuck at GND
+    Warning (13410): Pin "HEX3[2]" is stuck at GND
+    Warning (13410): Pin "HEX3[3]" is stuck at GND
+    Warning (13410): Pin "HEX3[4]" is stuck at GND
+    Warning (13410): Pin "HEX3[5]" is stuck at GND
+    Warning (13410): Pin "HEX3[6]" is stuck at GND
+    Warning (13410): Pin "HEX4[0]" is stuck at GND
+    Warning (13410): Pin "HEX4[1]" is stuck at GND
+    Warning (13410): Pin "HEX4[2]" is stuck at GND
+    Warning (13410): Pin "HEX4[3]" is stuck at GND
+    Warning (13410): Pin "HEX4[4]" is stuck at GND
+    Warning (13410): Pin "HEX4[5]" is stuck at GND
+    Warning (13410): Pin "HEX4[6]" is stuck at GND
+    Warning (13410): Pin "HEX5[0]" is stuck at GND
+    Warning (13410): Pin "HEX5[1]" is stuck at GND
+    Warning (13410): Pin "HEX5[2]" is stuck at GND
+    Warning (13410): Pin "HEX5[3]" is stuck at GND
+    Warning (13410): Pin "HEX5[4]" is stuck at GND
+    Warning (13410): Pin "HEX5[5]" is stuck at GND
+    Warning (13410): Pin "HEX5[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "VGA_B[0]" is stuck at GND
+    Warning (13410): Pin "VGA_B[1]" is stuck at GND
+    Warning (13410): Pin "VGA_B[2]" is stuck at GND
+    Warning (13410): Pin "VGA_B[3]" is stuck at GND
+    Warning (13410): Pin "VGA_B[4]" is stuck at GND
+    Warning (13410): Pin "VGA_B[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[0]" is stuck at GND
+    Warning (13410): Pin "VGA_R[1]" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 16 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/term_project.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "CLOCK3_50"
+    Warning (15610): No output dependent on input pin "CLOCK4_50"
+    Warning (15610): No output dependent on input pin "CLOCK_50"
+    Warning (15610): No output dependent on input pin "KEY[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+Info (21057): Implemented 3386 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 81 output pins
+    Info (21061): Implemented 3263 logic cells
+    Info (21062): Implemented 24 DSP elements
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 186 warnings
+    Info: Peak virtual memory: 4704 megabytes
+    Info: Processing ended: Mon Jun 17 01:13:48 2024
+    Info: Elapsed time: 00:00:17
+    Info: Total CPU time (on all processors): 00:00:16
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/savka/Desktop/ders/3.2,/314 proje/term_project/term_project.map.smsg.
+
+
