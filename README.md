@@ -60,15 +60,15 @@ The project showcases a comprehensive set of features, ensuring a dynamic and en
 ## Visuals
 
 ### Game Field Representation
-![Game Field](images/figure1.png)
+![Game Field](images/figure1.PNG)
 *Figure 1: Example game field representation.*
 
 ### Shooting Mode 1
-![Shooting Mode 1](images/figure2.png)
+![Shooting Mode 1](images/figure2.PNG)
 *Figure 2: Example shooting for mode 1.*
 
 ### Shooting Mode 2
-![Shooting Mode 2](images/figure3.png)
+![Shooting Mode 2](images/figure3.PNG)
 *Figure 3: Example shooting for mode 2.*
 
 ## Conclusion
