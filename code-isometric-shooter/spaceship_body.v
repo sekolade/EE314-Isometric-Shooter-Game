@@ -20,7 +20,6 @@
 		  led_count<=0;
     end
 
-    // Büyük küre merkezi ve yarıçapı
     localparam CENTER_X = 320;
     localparam CENTER_Y = 240;
     localparam RADIUS = 20;
@@ -32,7 +31,6 @@
     assign dy = y - CENTER_Y;
     assign dist_sq = dx * dx + dy * dy;
 
-    // Küçük küre için değişkenler
     reg [10:0] dot_x;
     reg [10:0] dot_y;
     localparam RADIUS_dot = 7;
@@ -76,12 +74,12 @@
 		  end
         if (x < 640 && y < 480) begin
             if (dist_sq <= RADIUS_SQ) begin
-                color <= 8'b11100000; // Büyük küre rengi kırmızı
+                color <= 8'b11100000; // 
             end else begin
                 color <= 8'b00000000; // siyah
             end
             if (dist_dot_sq <= RADIUS_SQ_dot) begin
-                color <= spaceship_color; // Küçük küre rengi
+                color <= spaceship_color; // küre rengi
             end
         end else begin
             color <= 8'b00000000; // siyah
