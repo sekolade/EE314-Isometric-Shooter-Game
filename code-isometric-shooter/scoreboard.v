@@ -7,7 +7,7 @@ module scoreboard (
 );
 localparam centerx = 500;
 localparam centery = 50;
-localparam FONT_WIDTH = 11; // 10 bits for the digit + 1 bit for the space
+localparam FONT_WIDTH = 11; 
 localparam FONT_HEIGHT = 10;
 localparam TOTAL_WIDTH = 2 * FONT_WIDTH;
 localparam START_X = centerx - (TOTAL_WIDTH) / 2;
