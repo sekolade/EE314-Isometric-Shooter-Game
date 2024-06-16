@@ -15,7 +15,6 @@ module enemy_effect(
 
     wire [9:0] x1, y1, x2, y2, x3, y3, x4, y4, x5, y5, x6, y6, x7, y7, x8, y8;
 
-    // Instantiating the location modules for each enemy
     location loc1(enemy_matrix1[12:9], enemy_matrix1[8:4], x1, y1);
     location loc2(enemy_matrix2[12:9], enemy_matrix2[8:4], x2, y2);
     location loc3(enemy_matrix3[12:9], enemy_matrix3[8:4], x3, y3);
@@ -41,10 +40,8 @@ module enemy_effect(
     integer i;
 
     always @(posedge clk) begin
-        color = 8'b00000000; // Default color
-        // Iterate over each enemy
+        color = 8'b00000000; 
         for (i = 0; i < 8; i = i + 1) begin
-            // Determine location and distance for each enemy
             case (i)
                 0: begin
                     location_ = enemy_matrix1[8:4];
@@ -52,23 +49,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix1[3];
                     distance_sq = (x1 - next_x) * (x1 - next_x) + (y1 - next_y) * (y1 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; // F
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; // Fa
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -84,23 +81,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix2[3];
                     distance_sq = (x2 - next_x) * (x2 - next_x) + (y2 - next_y) * (y2 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; // 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -116,23 +113,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix3[3];
                     distance_sq = (x3 - next_x) * (x3 - next_x) + (y3 - next_y) * (y3 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -148,23 +145,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix4[3];
                     distance_sq = (x4 - next_x) * (x4 - next_x) + (y4 - next_y) * (y4 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -180,23 +177,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix5[3];
                     distance_sq = (x5 - next_x) * (x5 - next_x) + (y5 - next_y) * (y5 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; // right 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -212,23 +209,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix6[3];
                     distance_sq = (x6 - next_x) * (x6 - next_x) + (y6 - next_y) * (y6 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -244,23 +241,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix7[3];
                     distance_sq = (x7 - next_x) * (x7 - next_x) + (y7 - next_y) * (y7 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111;
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111; 
             end
                 
 					 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
@@ -276,23 +273,23 @@ module enemy_effect(
                     alive_dead = enemy_matrix8[3];
                     distance_sq = (x8 - next_x) * (x8 - next_x) + (y8 - next_y) * (y8 - next_y);
 						  if (location_ >= 29) begin
-                explosion_color1 = 8'b11111111; // Bright blue
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 17) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 7) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 3) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 1) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 23) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else if (location_ >= 22) begin
-                explosion_color1 = 8'b11111111; // Fading effect
+                explosion_color1 = 8'b11111111; 
             end else begin
-                explosion_color1 = 8'b11111111; // No explosion
+                explosion_color1 = 8'b11111111;
             end
                 
 					if (distance_sq < radius_sq && location_ <= 31 && location_ >= 22) begin
