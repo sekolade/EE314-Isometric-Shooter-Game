@@ -14,7 +14,7 @@ Welcome to the FPGA Implementation of an Isometric Shooter Game! This project, p
 ## Project Features
 The project showcases a comprehensive set of features, ensuring a dynamic and enjoyable gameplay experience. Below are the details of the implemented features.
 
-### Required Features
+### Features
 1. **Spaceship Location & Movement**
    - The spaceship is centrally located on the game field.
    - Rotates within its axis controlled by buttons on the FPGA board.
@@ -41,34 +41,36 @@ The project showcases a comprehensive set of features, ensuring a dynamic and en
    - Game ends when an enemy collides with the spaceship.
    - Displays game over message with final score.
 
-### Bonus Features
-1. **Animations**
+6. **Animations**
    - Enhanced visual appeal with projectile and enemy movement animations.
 
-2. **Background and Graphics**
+7. **Background and Graphics**
    - Added background images and graphical elements.
 
-3. **Visual Feedback**
+8. **Visual Feedback**
    - Utilized LEDs and seven-segment displays for feedback.
 
-4. **Additional Shooting Modes**
+9. **Additional Shooting Modes**
    - Explored and implemented additional shooting modes.
 
-5. **Leveling System**
+10. **Leveling System**
    - Changes enemy speeds and health levels over time for increased difficulty.
 
 ## Visuals
 
 ### Game Field Representation
 ![Game Field](images/figure1.PNG)
+
 *Figure 1: Example game field representation.*
 
 ### Shooting Mode 1
 ![Shooting Mode 1](images/figure2.PNG)
+
 *Figure 2: Example shooting for mode 1.*
 
 ### Shooting Mode 2
 ![Shooting Mode 2](images/figure3.PNG)
+
 *Figure 3: Example shooting for mode 2.*
 
 ## Conclusion
