@@ -53,7 +53,7 @@ The project showcases a comprehensive set of features, ensuring a dynamic and en
    - Explored and implemented additional shooting modes.
 
 10. **Leveling System**
-   - Implemented a leveling system that changes enemy speeds and health levels over time for increased difficulty.
+    - Changes enemy speeds and health levels over time for increased difficulty.
 
 ## Visuals
 
