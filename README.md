@@ -6,8 +6,7 @@ Welcome to the FPGA Implementation of an Isometric Shooter Game! This project, p
 
 ## Table of Contents
 1. [Project Features](#project-features)
-   - [Required Features](#required-features)
-   - [Bonus Features](#bonus-features)
+   - [Features](#features)
 2. [Visuals](#visuals)
 3. [Conclusion](#conclusion)
 
@@ -75,6 +74,3 @@ The project showcases a comprehensive set of features, ensuring a dynamic and en
 
 ## Conclusion
 This project offers a robust framework for learning and applying Verilog HDL and FPGA programming within a fun and engaging game development context. By incorporating both required and bonus features, we've created a comprehensive and dynamic gameplay experience that challenges both players and developers.
-
-
-
