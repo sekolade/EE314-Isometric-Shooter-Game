@@ -2,7 +2,7 @@
 # 🚀 FPGA Implementation of Isometric Shooter Game
 METU EE314 Digital Circuits Laboratory Verilog Design Term Project - FPGA Implementation of Isometric Shooter Game on DE1-SoC board.
 ## Overview
-Welcome to the FPGA Implementation of an Isometric Shooter Game! This is the term project of EE314 Digital Circuits Laboratory course for Spring 2024, brings together the exciting world of game development with the technical challenges of Verilog HDL and FPGA programming. Inspired by the classic **Space Invaders**, this project provides an engaging platform to apply theoretical knowledge to real-world applications.
+Welcome to the FPGA Implementation of an Isometric Shooter Game! This term project for the EE314 Digital Circuits Laboratory course in Spring 2024 combines the exciting world of game development with the technical challenges of Verilog HDL and FPGA programming. Inspired by the classic **Space Invaders**, this project provides an engaging platform to apply theoretical knowledge to real-world applications.
 
 ## Table of Contents
 1. [Project Features](#project-features)
